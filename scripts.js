@@ -9,13 +9,23 @@ function cambiarIdioma() {
       'bienvenida': '- Desarrollador Web -',
       'descripcion': 'Creo aplicaciones web de alta calidad usando HTML, CSS, JavaScript, Node.js, React.js, y más.',
       'inicio': 'Inicio',
+      'habilidades': 'Habilidades',
       'proyectos': 'Proyectos',
       'sobreMi': 'Sobre mí',
       'contacto': 'Contacto',
       'proyectosDestacados': 'Proyectos Destacados',
-      'proyecto1': 'Proyecto 1',
-      'proyecto2': 'Proyecto 2',
-      'proyectoDescripcion': 'Descripción breve del proyecto.',
+      'proyecto1': 'Mi Portfolio',
+      'proyecto1Desc': 'Desarrollo de mi Portfolio Web, aplicando mis conocimientos en HTML, CSS, Tailwindcss, JavaScript, Diseño Grafico, Diseño UX/UI.',
+      'proyecto1Btn': 'Ver Proyecto',
+      'proyecto1Repo': 'Ver Repositorio',
+      'proyecto2': 'Página Web Empresarial',
+      'proyecto2Desc': 'Pagina Web desarrollada para mostrar el trabajo de mi Padre, aplicando mis conocimientos en HTML, CSS, JavaScript, Diseño Grafico, Diseño UX/UI.',
+      'proyecto2Btn': 'Ver Proyecto',
+      'proyecto2Repo': 'Ver Repositorio',
+      'proyecto3': 'Texto distinto',
+      'proyecto3Desc': 'Aquí debe ir un nuevo texto distinto.',
+      'proyecto3Btn': 'Ver Proyecto',
+      'proyecto3Repo': 'Ver Repositorio',
       'sobreMiDescripcion': 'Soy Aníbal Cardozo, un desarrollador con experiencia en proyectos web y optimización de algoritmos.',
       'contactoTitulo': 'Contacto',
       'nombre': 'Nombre',
@@ -32,19 +42,35 @@ function cambiarIdioma() {
       'resolucionProblemas': 'Resolución de problemas',
       'comunicacionDesc': 'Excelentes habilidades para comunicar ideas y soluciones con claridad y efectividad.',
       'trabajoEquipoDesc': 'Capacidad para colaborar de manera efectiva en equipos multidisciplinarios.',
-      'resolucionProblemasDesc': 'Experto en identificar y resolver problemas complejos de manera eficiente.'
+      'resolucionProblemasDesc': 'Experto en identificar y resolver problemas complejos de manera eficiente.',
+      'sobreMiTitulo': 'Sobre Mí',
+      'sobreMiTexto1': 'Soy Aníbal Cardozo, un desarrollador web apasionado por crear aplicaciones modernas y eficientes. Con experiencia en JavaScript, Node.js, React y Tailwind CSS, siempre busco la excelencia en cada proyecto.',
+      'sobreMiTexto2': 'Además de mi experiencia técnica, disfruto trabajando en equipo y aprendiendo constantemente nuevas tecnologías para mantenerme al día en un sector tan dinámico como el desarrollo web.',
+      'sobreMiTexto3': 'Cuando no estoy programando, me encanta explorar nuevas habilidades, asi como tambien jugar videojuegos, aprender sobre nuevas metodologías de trabajo, y participar en proyectos que desafían mi creatividad.',
+      'descargarCv': 'Descargar CV',
+      'github':'GitHub'
     },
     'en': {
       'bienvenida': '- Web Developer -',
       'descripcion': 'I create high-quality web applications using HTML, CSS, JavaScript, Node.js, React.js, and more.',
       'inicio': 'Home',
+      'habilidades': 'Skills',
       'proyectos': 'Projects',
       'sobreMi': 'About me',
       'contacto': 'Contact',
       'proyectosDestacados': 'Featured Projects',
-      'proyecto1': 'Project 1',
-      'proyecto2': 'Project 2',
-      'proyectoDescripcion': 'Brief project description.',
+      'proyecto1': 'My Portfolio',
+      'proyecto1Desc': 'Development of my Web Portfolio, applying my knowledge in HTML, CSS, Tailwindcss, JavaScript, Graphics Design, UX / UI Design.',
+      'proyecto1Btn': 'View Project',
+      'proyecto1Repo': 'View Repository',
+      'proyecto2': 'Business Website',
+      'proyecto2Desc': "Web page developed to show my Father's work, applying my knowledge in HTML, CSS, JavaScript, Graphic Design, UX / UI Design.",
+      'proyecto2Btn': 'View Project',
+      'proyecto2Repo': 'View Repository',
+      'proyecto3': 'Different Text',
+      'proyecto3Desc': 'This should be a new different text.',
+      'proyecto3Btn': 'View Project',
+      'proyecto3Repo': 'View Repository',
       'sobreMiDescripcion': 'I am Aníbal Cardozo, a developer with experience in web projects and algorithm optimization.',
       'contactoTitulo': 'Contact',
       'nombre': 'Name',
@@ -61,7 +87,13 @@ function cambiarIdioma() {
       'resolucionProblemas': 'Problem Solving',
       'comunicacionDesc': 'Excellent skills to communicate ideas and solutions clearly and effectively.',
       'trabajoEquipoDesc': 'Ability to collaborate effectively in multidisciplinary teams.',
-      'resolucionProblemasDesc': 'Expert in identifying and solving complex problems efficiently.'
+      'resolucionProblemasDesc': 'Expert in identifying and solving complex problems efficiently.',
+      'sobreMiTitulo': 'About Me',
+      'sobreMiTexto1': 'I am Aníbal Cardozo, a web developer passionate about creating modern and efficient applications. With experience in JavaScript, Node.js, React and Tailwind CSS, I always seek excellence in every project.',
+      'sobreMiTexto2': 'In addition to my technical expertise, I enjoy working as a team and constantly learning new technologies to stay up-to-date in a sector as dynamic as web development.',
+      'sobreMiTexto3': "When I'm not programming, I love exploring new skills, as well as playing video games, learning about new work methodologies, and participating in projects that challenge my creativity.",
+      'descargarCv': 'Download CV',
+      'github': 'GitHub'
     }
   };
 
@@ -74,9 +106,13 @@ function cambiarIdioma() {
   const pElement = document.querySelector("#inicio p");
   if (pElement) pElement.textContent = traduccion.descripcion;
 
+
   // Actualiza el menú
   const menuInicio = document.querySelector("a[href='#inicio']");
   if (menuInicio) menuInicio.textContent = traduccion.inicio;
+
+  const menuSkills = document.querySelector("a[href='#skills']");
+  if (menuSkills) menuSkills.textContent = traduccion.habilidades;
 
   const menuProyectos = document.querySelector("a[href='#proyectos']");
   if (menuProyectos) menuProyectos.textContent = traduccion.proyectos;
@@ -87,19 +123,47 @@ function cambiarIdioma() {
   const menuContacto = document.querySelector("a[href='#contacto']");
   if (menuContacto) menuContacto.textContent = traduccion.contacto;
 
+
+
   // Actualiza secciones
-  const proyectosH2 = document.querySelector("#proyectos h2");
+  const proyectosH2 = document.querySelector("#projectsTitle");
   if (proyectosH2) proyectosH2.textContent = traduccion.proyectosDestacados;
 
-  const proyecto1H3 = document.querySelector("#proyecto1 h3");
+  const proyecto1H3 = document.querySelector("#proyecto1");
   if (proyecto1H3) proyecto1H3.textContent = traduccion.proyecto1;
 
-  const proyecto2H3 = document.querySelector("#proyecto2 h3");
+  const proyecto1Desc = document.querySelector("#proyecto1Desc");
+  if (proyecto1Desc) proyecto1Desc.textContent = traduccion.proyecto1Desc;
+
+  const proyecto1Btn = document.querySelector("#proyecto1Btn");
+  if (proyecto1Btn) proyecto1Btn.textContent = traduccion.proyecto1Btn;
+
+  const proyecto1Repo = document.querySelector("#proyecto1Repo");
+  if (proyecto1Repo) proyecto1Repo.textContent = traduccion.proyecto1Repo;
+
+  const proyecto2H3 = document.querySelector("#proyecto2");
   if (proyecto2H3) proyecto2H3.textContent = traduccion.proyecto2;
 
-  document.querySelectorAll(".proyecto-descripcion").forEach(el => {
-    if (el) el.textContent = traduccion.proyectoDescripcion;
-  });
+  const proyecto2Desc = document.querySelector("#proyecto2Desc");
+  if (proyecto2Desc) proyecto2Desc.textContent = traduccion.proyecto2Desc;
+
+  const proyecto2Btn = document.querySelector("#proyecto2Btn");
+  if (proyecto2Btn) proyecto2Btn.textContent = traduccion.proyecto2Btn;
+
+  const proyecto2Repo = document.querySelector("#proyecto2Repo");
+  if (proyecto2Repo) proyecto2Repo.textContent = traduccion.proyecto2Repo;
+
+  const proyecto3H3 = document.querySelector("#proyecto3");
+  if (proyecto3H3) proyecto3H3.textContent = traduccion.proyecto3;
+
+  const proyecto3Desc = document.querySelector("#proyecto3Desc");
+  if (proyecto3Desc) proyecto3Desc.textContent = traduccion.proyecto3Desc;
+
+  const proyecto3Btn = document.querySelector("#proyecto3Btn");
+  if (proyecto3Btn) proyecto3Btn.textContent = traduccion.proyecto3Btn;
+
+  const proyecto3Repo = document.querySelector("#proyecto3Repo");
+  if (proyecto3Repo) proyecto3Repo.textContent = traduccion.proyecto3Repo;
 
   const sobreMiH2 = document.querySelector("#sobre-mi h2");
   if (sobreMiH2) sobreMiH2.textContent = traduccion.sobreMi;
@@ -110,17 +174,21 @@ function cambiarIdioma() {
   const contactoH2 = document.querySelector("#contacto h2");
   if (contactoH2) contactoH2.textContent = traduccion.contactoTitulo;
 
-  const nombreInput = document.querySelector("input[placeholder='Nombre']");
-  if (nombreInput) nombreInput.placeholder = traduccion.nombre;
-
-  const correoInput = document.querySelector("input[placeholder='Correo']");
-  if (correoInput) correoInput.placeholder = traduccion.correo;
-
-  const mensajeTextarea = document.querySelector("textarea[placeholder='Mensaje']");
-  if (mensajeTextarea) mensajeTextarea.placeholder = traduccion.mensaje;
-
   const enviarButton = document.querySelector("button[type='submit']");
   if (enviarButton) enviarButton.textContent = traduccion.enviar;
+
+  const nombreInput = document.querySelector("#nombreInput");
+  if (nombreInput) nombreInput.placeholder = traduccion.nombre;
+
+  const correoInput = document.querySelector("#correoInput");
+  if (correoInput) correoInput.placeholder = traduccion.correo;
+
+  const mensajeTextarea = document.querySelector("#mensajeTextarea");
+  if (mensajeTextarea) mensajeTextarea.placeholder = traduccion.mensaje;
+
+
+
+
 
   // Actualiza los textos del portafolio
   const webDevText = document.querySelector("#webDevText");
@@ -138,6 +206,23 @@ function cambiarIdioma() {
 
   const habilidadesBlandas = document.querySelector("#habilidadesBlandas");
   if (habilidadesBlandas) habilidadesBlandas.textContent = traduccion.habilidadesBlandas;
+
+  const sobreMiTitulo = document.querySelector("#sobreMiTitulo");
+  if (sobreMiTitulo) sobreMiTitulo.textContent = traduccion.sobreMiTitulo;
+
+  const sobreMiTexto1 = document.querySelector("#sobreMiTexto1");
+  if (sobreMiTexto1) sobreMiTexto1.textContent = traduccion.sobreMiTexto1;
+
+  const sobreMiTexto2 = document.querySelector("#sobreMiTexto2");
+  if (sobreMiTexto2) sobreMiTexto2.textContent = traduccion.sobreMiTexto2;
+
+  const sobreMiTexto3 = document.querySelector("#sobreMiTexto3");
+  if (sobreMiTexto3) sobreMiTexto3.textContent = traduccion.sobreMiTexto3;
+
+  const descargarCv = document.querySelector("a[download]");
+  if (descargarCv) descargarCv.textContent = traduccion.descargarCv;
+
+
 
   // Actualiza habilidades blandas
   document.querySelector("#comunicacionHabilidad").textContent = traduccion.comunicacion;
@@ -213,4 +298,36 @@ window.addEventListener('scroll', function() {
     header.style.color = ''; // Resetea el color del texto
     header.style.opacity = '1'; // Opacidad total al volver arriba
   }
+});
+
+
+// Función para resaltar la sección activa en el menú de navegación
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5 // Se activa cuando al menos el 50% de la sección es visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.getAttribute('id');
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active-link'); // Quita la clase activa de todos los enlaces
+          if (link.getAttribute('href').includes(sectionId)) {
+            link.classList.add('active-link'); // Añade la clase activa al enlace correspondiente
+          }
+        });
+      }
+    });
+  }, options);
+
+  sections.forEach(section => {
+    observer.observe(section); // Observa cada sección
+  });
 });

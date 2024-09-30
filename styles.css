@@ -18,4 +18,12 @@ input:checked + .w-11 .dot {
     transition: background-color 0.3s ease, opacity 0.3s ease;
   }
   
+  .active-link {
+    border-bottom: 2px solid #1de9b6; /* Cambia el color según el diseño */
+    color: #1de9b6; /* Color del texto activo */
+  }
+  
+  .active-link:hover {
+    color: #1de9b6; /* Asegúrate de que el color no cambie al pasar el ratón */
+  }
   
