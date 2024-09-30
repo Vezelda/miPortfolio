@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es" class="dark"> <!-- Tema claro activado por defecto -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Aníbal</title>
+  <link href="dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100"> <!-- Inversión de estilos -->
+  <!-- Header -->
+  <header class="bg-gray-300 text-black p-4 dark:bg-dark-gray dark:text-white">
+    <div class="container mx-auto flex flex-wrap justify-between items-center space-y-4 md:space-y-0">
+      <!-- Título del portafolio -->
+      <h1 class="text-3xl font-bold group">
+        <span class="text-[#5f9ea0] group-hover:text-[#374151] transition-colors duration-300 dark:text-light-turquoise dark:group-hover:text-white">Aníbal</span>
+        <span class="text-[#374151] group-hover:text-[#5f9ea0] transition-colors duration-300 dark:text-white dark:group-hover:text-light-turquoise">Cardozo</span>
+      </h1>
+      
+
+      <!-- Menú de navegación -->
+      <nav class="flex space-x-4 md:space-x-6 items-center">
+        <ul class="flex space-x-2 md:space-x-4">
+          <li><a href="#inicio" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Inicio</a></li>
+          <li><a href="#proyectos" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Proyectos</a></li>
+          <li><a href="#sobre-mi" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Sobre mí</a></li>
+          <li><a href="#contacto" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Contacto</a></li>
+        </ul>
+
+        <!-- Íconos de GitHub y LinkedIn -->
+        <div class="flex space-x-2 md:space-x-4">
+          <a href="https://github.com/tu-github" target="_blank" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">
+            <i class="fab fa-github text-2xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Botones para cambiar idioma y tema -->
+      <div class="flex space-x-2 md:space-x-4 items-center">
+        <!-- Botón deslizante para cambiar idioma -->
+        <label class="inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="idiomaSwitch" class="sr-only" onclick="cambiarIdioma()">
+          <div class="w-11 h-6 bg-gray-400 rounded-full shadow-inner dark:bg-light-turquoise relative transition">
+            <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition dark:bg-gray-900"></div>
+          </div>
+          <span class="ml-3 text-sm text-gray-900 dark:text-white" id="idiomaLabel">ES</span>
+        </label>
+      
+        <!-- Botón deslizante para cambiar tema (Sol y Luna) -->
+        <label class="inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="temaSwitch" class="sr-only" onclick="cambiarTema()">
+          <div class="w-11 h-6 bg-gray-800 rounded-full shadow-inner dark:bg-light-turquoise relative transition">
+            <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition dark:bg-gray-900"></div>
+          </div>
+          <i id="iconTema" class="fas fa-sun ml-3 text-yellow-500"></i>
+        </label>
+
+    </div>
+  </header>
+
+
+  
+  <section id="inicio" class="h-screen bg-fixed bg-cover bg-center flex flex-col items-center justify-center space-y-4 text-center" style="background-image: url('images/back.gif');">
+    <!-- Contenedor que contiene "I AM", la imagen y "Vezel" -->
+    <div class="flex flex-col md:flex-row items-center justify-center space-x-10">
+        <!-- Texto 'I AM' a la izquierda (oculto en pantallas pequeñas) -->
+        <h1 class="text-9xl font-bold tracking-wider text-black font-handwritten hidden md:block">
+          I AM
+        </h1>
+
+        <!-- Imagen centrada (siempre visible) -->
+        <div class="mx-8">
+          <img src="images/yo.png" alt="Aníbal Cardozo" class="rounded-lg shadow-lg max-w-xs">
+        </div>
+
+        <!-- Texto 'Vezel' a la derecha (oculto en pantallas pequeñas) -->
+        <h1 class="text-9xl font-bold tracking-wider hidden md:block">
+          <span class="text-light-turquoise font-handwritten">V</span><span class="text-black font-handwritten">ezel</span>
+        </h1>
+    </div>
+
+    <!-- Descripción debajo de "I AM", la imagen y "Vezel" -->
+    <div class="text-center mt-16 space-y-6 transform -translate-x-12">
+      <h2 id="webDevText" class="text-6xl font-handwritten italic text-black font-handwritten font-bold">
+        - Desarrollador Web -
+      </h2>
+      <p id="descriptionText" class="text-3xl max-w-3xl mx-auto text-gray-300 dark:text-black">
+        Creo aplicaciones web de alta calidad usando HTML, CSS, JavaScript, Node.js, React.js, y más.
+      </p>
+
+      <!-- Botón de proyectos centrado debajo de la descripción -->
+      <a id="exploreButton" href="#proyectos" class="mt-8 bg-light-turquoise text-gray-900 font-bold py-4 px-10 rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300 shadow-lg inline-block">
+        Explora mis proyectos!
+      </a>
+    </div>
+
+  </section>
+
+
+<!-- Sección de Skills -->
+<section id="skills" class="py-16 bg-gray-200 text-gray-900 dark:bg-dark-gray dark:text-gray-100">
+  <div class="container mx-auto text-center">
+    <h2 id="skillsTitle" class="text-3xl font-bold mb-8 text-black dark:text-light-turquoise">Mis Habilidades</h2>
+
+    <!-- Habilidades Técnicas -->
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+      <!-- Habilidad 1: HTML5 -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-html5 text-6xl mb-4" style="color: #E34F26;"></i>
+        <p id="skill-html5" class="text-xl">HTML5</p>
+      </div>
+
+      <!-- Habilidad 2: CSS3 -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-css3-alt text-6xl mb-4" style="color: #1572B6;"></i>
+        <p id="skill-css3" class="text-xl">CSS3</p>
+      </div>
+
+      <!-- Habilidad 3: JavaScript -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-js-square text-6xl mb-4" style="color: #F7DF1E;"></i>
+        <p id="skill-js" class="text-xl">JavaScript</p>
+      </div>
+
+      <!-- Habilidad 4: Node.js -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-node-js text-6xl mb-4" style="color: #339933;"></i>
+        <p id="skill-nodejs" class="text-xl">Node.js</p>
+      </div>
+
+      <!-- Habilidad 5: React.js -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-react text-6xl mb-4" style="color: #61DAFB;"></i>
+        <p id="skill-react" class="text-xl">React.js</p>
+      </div>
+
+      <!-- Habilidad 6: Git -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-git-alt text-6xl mb-4" style="color: #F05032;"></i>
+        <p id="skill-git" class="text-xl">Git</p>
+      </div>
+
+      <!-- Habilidad 7: Docker -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-docker text-6xl mb-4" style="color: #2496ED;"></i>
+        <p id="skill-docker" class="text-xl">Docker</p>
+      </div>
+
+      <!-- Habilidad 8: Python -->
+      <div class="flex flex-col items-center">
+        <i class="fab fa-python text-6xl mb-4" style="color: #3776AB;"></i>
+        <p id="skill-python" class="text-xl">Python</p>
+      </div>
+
+      <!-- Habilidad 9: PostgreSQL -->
+      <div class="flex flex-col items-center">
+        <img src="https://img.icons8.com/color/96/000000/postgreesql.png" alt="PostgreSQL Icon" class="w-16 h-16 mb-4"/>
+        <p id="skill-postgresql" class="text-xl">PostgreSQL</p>
+      </div>
+
+      <!-- Habilidad 10: Tailwind CSS -->
+      <div class="flex flex-col items-center">
+        <img src="https://img.icons8.com/color/96/000000/tailwindcss.png" alt="Tailwind CSS Icon" class="w-16 h-16 mb-4"/>
+        <p id="skill-tailwind" class="text-xl">Tailwind CSS</p>
+      </div>
+    </div>
+
+    <!-- Separador entre habilidades técnicas y blandas -->
+    <hr class="my-8 border-t border-gray-300 dark:border-gray-700">
+
+    <!-- Contenedor de habilidades blandas -->
+    <h2 id="habilidadesBlandas" class="text-3xl font-bold mb-8 text-black dark:text-light-turquoise">Habilidades Blandas</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+      <div class="bg-gray-300 p-4 rounded-lg shadow-lg dark:bg-medium-gray">
+        <h3 id="comunicacionHabilidad" class="text-xl font-semibold mb-2 text-black dark:text-light-turquoise">Comunicación</h3>
+        <p id="comunicacionDesc" class="text-black dark:text-gray-100">Excelentes habilidades para comunicar ideas y soluciones con claridad y efectividad.</p>
+      </div>
+      <div class="bg-gray-300 p-4 rounded-lg shadow-lg dark:bg-medium-gray">
+        <h3 id="trabajoEquipoHabilidad" class="text-xl font-semibold mb-2 text-black dark:text-light-turquoise">Trabajo en equipo</h3>
+        <p id="trabajoEquipoDesc" class="text-black dark:text-gray-100">Capacidad para colaborar de manera efectiva en equipos multidisciplinarios.</p>
+      </div>
+      <div class="bg-gray-300 p-4 rounded-lg shadow-lg dark:bg-medium-gray">
+        <h3 id="resolucionProblemasHabilidad" class="text-xl font-semibold mb-2 text-black dark:text-light-turquoise">Resolución de problemas</h3>
+        <p id="resolucionProblemasDesc" class="text-black dark:text-gray-100">Experto en identificar y resolver problemas complejos de manera eficiente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Sección de Proyectos -->
+  <section id="proyectos" class="py-16 bg-gray-200 text-gray-900 dark:bg-dark-gray dark:text-gray-100">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 text-black dark:text-light-turquoise">Proyectos Destacados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="proyecto1" class="bg-gray-300 p-4 rounded-lg shadow-lg dark:bg-medium-gray">
+          <h3 class="text-xl font-semibold mb-2 text-black dark:text-light-turquoise">Proyecto 1</h3>
+          <p class="text-black dark:text-gray-100 proyecto-descripcion">Descripción breve del proyecto.</p>
+        </div>
+        <div id="proyecto2" class="bg-gray-300 p-4 rounded-lg shadow-lg dark:bg-medium-gray">
+          <h3 class="text-xl font-semibold mb-2 text-black dark:text-light-turquoise">Proyecto 2</h3>
+          <p class="text-black dark:text-gray-100 proyecto-descripcion">Descripción breve del proyecto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Sobre mí -->
+  <section id="sobre-mi" class="py-16 bg-gray-200 text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 text-black dark:text-light-turquoise">Sobre mí</h2>
+      <p class="text-center text-lg">Soy Aníbal Cardozo, un desarrollador con experiencia en proyectos web y optimización de algoritmos.</p>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto" class="py-16 bg-gray-200 text-gray-900 dark:bg-dark-gray dark:text-gray-100">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8 text-black dark:text-light-turquoise">Contacto</h2>
+      <form class="max-w-lg mx-auto">
+        <input type="text" placeholder="Nombre" class="w-full mb-4 p-2 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black">
+        <input type="email" placeholder="Correo" class="w-full mb-4 p-2 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black">
+        <textarea placeholder="Mensaje" class="w-full mb-4 p-2 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black"></textarea>
+        <button type="submit" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600 dark:bg-light-turquoise dark:text-gray-900 dark:hover:bg-gray-100">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-300 text-black p-4 text-center dark:bg-dark-gray dark:text-white">
+    <p>© 2024 Aníbal Cardozo</p>
+  </footer>
+
+  <!-- Enlazamos el archivo JavaScript -->
+  <script src="scripts.js"></script>
+</body>
+</html>
