@@ -277,6 +277,17 @@ function verificarTemaInicial() {
   }
 }
 
+function mostrarConfirmacion(event) {
+  // Mostramos el mensaje de confirmación
+  const confirmacionMensaje = document.getElementById('confirmacionMensaje');
+  confirmacionMensaje.classList.remove('hidden');
+
+  // Luego de un corto retraso, enviamos el formulario a Netlify
+  setTimeout(() => {
+    event.target.submit(); // Envía el formulario
+  }, 2000); // Ajusta el retraso según lo que quieras
+}
+
 // Llama a la función cuando la página se carga
 window.onload = verificarTemaInicial;
 
@@ -309,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5 // Se activa cuando al menos el 50% de la sección es visible
+    threshold: 1 // Se activa cuando al menos el 50% de la sección es visible
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -331,31 +342,3 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(section); // Observa cada sección
   });
 });
-
-// Función para mostrar mensaje de confirmación cuando el formulario se envía
-function mostrarConfirmacion(event) {
-  event.preventDefault(); // Prevenir el envío estándar del formulario
-  const form = event.target;
-
-  // Enviar el formulario a través de Netlify usando fetch
-  fetch("/", {
-    method: "POST",
-    body: new FormData(form)
-  })
-  .then(() => {
-    // Mostrar el mensaje de confirmación
-    const confirmacionMensaje = document.createElement('div');
-    confirmacionMensaje.classList.add('fixed', 'top-0', 'left-0', 'w-full', 'p-4', 'bg-green-500', 'text-white', 'text-center', 'z-50');
-    confirmacionMensaje.textContent = "¡Solicitud enviada correctamente!";
-    document.body.appendChild(confirmacionMensaje);
-
-    // Ocultar el mensaje después de unos segundos
-    setTimeout(() => {
-      confirmacionMensaje.remove();
-    }, 3000); // Desaparece después de 3 segundos
-
-    // Opcionalmente, limpiar los campos del formulario
-    form.reset();
-  })
-  .catch(error => console.error("Error al enviar el formulario:", error));
-}
