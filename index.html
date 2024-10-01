@@ -282,12 +282,11 @@
 </section>
 
 
-<!-- Sección de Contacto Mejorada con Netlify -->
+<!-- Sección de Contacto Mejorada con Netlify y JS -->
 <section id="contacto" class="py-16 bg-gray-200 text-gray-900 dark:bg-dark-gray dark:text-gray-100">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-8 text-black dark:text-light-turquoise">Contacto</h2>
-    
-    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-lg mx-auto">
+    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-lg mx-auto" onsubmit="mostrarConfirmacion(event)">
       <!-- Campo oculto para Netlify Honeypot -->
       <input type="hidden" name="form-name" value="contacto" />
       <p class="hidden">
@@ -296,17 +295,20 @@
 
       <!-- Nombre -->
       <div class="relative mb-4">
-        <label>Nombre <input type="text" name="nombre" placeholder="Nombre" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></label>
+        <i class="fas fa-user absolute left-3 top-3 text-gray-400"></i>
+        <input type="text" name="nombre" id="nombreInput" placeholder="Nombre" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise">
       </div>
 
       <!-- Correo -->
       <div class="relative mb-4">
-        <label>Correo <input type="email" name="correo" placeholder="Correo" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></label>
+        <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
+        <input type="email" name="correo" id="correoInput" placeholder="Correo" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise">
       </div>
 
       <!-- Mensaje -->
       <div class="relative mb-4">
-        <label>Mensaje <textarea name="mensaje" placeholder="Mensaje" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></textarea></label>
+        <i class="fas fa-comment-dots absolute left-3 top-3 text-gray-400"></i>
+        <textarea name="mensaje" id="mensajeTextarea" placeholder="Mensaje" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></textarea>
       </div>
 
       <!-- Botón de envío -->
@@ -333,7 +335,21 @@
   </div>
 </section>
 
+<!-- JavaScript para mostrar el mensaje de confirmación -->
+<script>
+  function mostrarConfirmacion(event) {
+    event.preventDefault(); // Previene el envío inmediato del formulario
 
+    // Mostrar el mensaje de confirmación
+    const confirmacionMensaje = document.getElementById("confirmacionMensaje");
+    confirmacionMensaje.classList.remove("hidden");
+    confirmacionMensaje.textContent = "¡Solicitud enviada correctamente!";
+
+    // Aquí puedes agregar la lógica para enviar el formulario a Netlify
+    // Usa el siguiente código para permitir que el formulario se envíe después de mostrar el mensaje
+    event.target.submit();
+  }
+</script>
 
 
   <!-- Footer -->

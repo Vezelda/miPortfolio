@@ -277,22 +277,6 @@ function verificarTemaInicial() {
   }
 }
 
-function mostrarConfirmacion(event) {
-  event.preventDefault(); // Evita la recarga automática de la página
-  const form = event.target;
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(new FormData(form)).toString(),
-  })
-    .then(() => {
-      // Muestra el mensaje de confirmación
-      document.getElementById("confirmacionMensaje").classList.remove("hidden");
-      form.reset(); // Opcional: Restablecer el formulario
-    })
-    .catch((error) => alert(error));
-}
 
 // Llama a la función cuando la página se carga
 window.onload = verificarTemaInicial;
