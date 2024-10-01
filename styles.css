@@ -27,7 +27,6 @@ input:checked + .w-11 .dot {
     color: #1de9b6; /* Asegúrate de que el color no cambie al pasar el ratón */
   }
   
-
   /* Ajuste general del header para pantallas pequeñas */
 @media (max-width: 768px) {
   header {
@@ -36,23 +35,33 @@ input:checked + .w-11 .dot {
     text-align: center;
   }
 
-  /* Ajusta el nombre y tamaño de la fuente en móviles */
-  .header-name {
-    font-size: 1.5rem; /* Tamaño de fuente más pequeño */
-    margin-bottom: 0.5rem; /* Añade un poco de espacio */
-  }
-
-  /* Asegura que el menú de navegación sea vertical y no se desborde */
+  /* Ocultar el menú inicialmente en móviles */
   nav ul {
+    display: none; /* Oculta el menú inicialmente */
     flex-direction: column; /* Hace que los enlaces del menú se apilen verticalmente */
     gap: 0.5rem;
+  }
+
+  /* Mostrar el menú cuando se haga clic en el botón "hamburguesa" */
+  nav ul.show {
+    display: flex; /* Muestra el menú cuando se active */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    width: 100%; /* Hace que el menú ocupe todo el ancho */
+    padding: 1rem; /* Espaciado interno */
   }
 
   nav ul li a {
     font-size: 1.2rem; /* Ajusta el tamaño del texto de los enlaces */
   }
 
-  /* Ajusta los íconos de GitHub y LinkedIn para que no se amontonen */
+  /* Mostrar el botón "hamburguesa" en pantallas pequeñas */
+  #menu-toggle {
+    display: block;
+    font-size: 2rem; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor cuando se pasa el ratón por encima */
+  }
+
+  /* Ajusta los íconos de redes sociales en móviles */
   .social-icons {
     margin-top: 1rem;
     flex-direction: column; /* Los íconos en vertical */
@@ -60,20 +69,35 @@ input:checked + .w-11 .dot {
   }
 }
 
+/* Para pantallas más grandes (desktop), el menú es visible por defecto */
+@media (min-width: 769px) {
+  #menu-toggle {
+    display: none; /* Oculta el botón "hamburguesa" en pantallas grandes */
+  }
+
+  nav ul {
+    display: flex; /* Menú visible por defecto en pantallas grandes */
+    flex-direction: row;
+  }
+}
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 1.8rem; /* Ajusta el tamaño de la fuente del nombre */
+  #inicio h1 {
+    font-size: 2rem; /* Tamaño más pequeño para móviles */
   }
 
-  p {
-    font-size: 1rem; /* Ajusta el tamaño de la fuente de la descripción */
-    margin: 0.5rem 0;
+  #inicio img {
+    width: 100%;
+    max-width: 200px; /* Ajusta el tamaño máximo de la imagen en móviles */
+  }
+
+  #inicio h2 {
+    font-size: 1.8rem;
+  }
+
+  #inicio p {
+    font-size: 1rem;
   }
 }
 
 
-img {
-  max-width: 100%; /* Asegúrate de que las imágenes no se desborden */
-  height: auto;
-}

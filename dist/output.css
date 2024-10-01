@@ -628,9 +628,9 @@ video {
   top: 0.75rem;
 }
 
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .mx-auto {
@@ -657,10 +657,6 @@ video {
 
 .ml-3 {
   margin-left: 0.75rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .mt-4 {
@@ -739,11 +735,6 @@ video {
   max-width: 20rem;
 }
 
-.-translate-x-12 {
-  --tw-translate-x: -3rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -784,10 +775,10 @@ video {
   gap: 2rem;
 }
 
-.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -806,6 +797,12 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -911,11 +908,6 @@ video {
   padding: 1rem;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -924,6 +916,11 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .py-16 {
@@ -939,11 +936,6 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .pl-12 {
@@ -968,13 +960,13 @@ video {
   line-height: 2.25rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
-.text-9xl {
-  font-size: 8rem;
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
@@ -1037,6 +1029,11 @@ video {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 .text-light-turquoise {
@@ -1118,6 +1115,99 @@ header {
 .active-link:hover {
   color: #1de9b6;
   /* Asegúrate de que el color no cambie al pasar el ratón */
+}
+
+/* Ajuste general del header para pantallas pequeñas */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ocultar el menú inicialmente en móviles */
+
+  nav ul {
+    display: none;
+    /* Oculta el menú inicialmente */
+    flex-direction: column;
+    /* Hace que los enlaces del menú se apilen verticalmente */
+    gap: 0.5rem;
+  }
+
+  /* Mostrar el menú cuando se haga clic en el botón "hamburguesa" */
+
+  nav ul.show {
+    display: flex;
+    /* Muestra el menú cuando se active */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo semitransparente */
+    width: 100%;
+    /* Hace que el menú ocupe todo el ancho */
+    padding: 1rem;
+    /* Espaciado interno */
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    /* Ajusta el tamaño del texto de los enlaces */
+  }
+
+  /* Mostrar el botón "hamburguesa" en pantallas pequeñas */
+
+  #menu-toggle {
+    display: block;
+    font-size: 2rem;
+    /* Tamaño del ícono */
+    cursor: pointer;
+    /* Cambia el cursor cuando se pasa el ratón por encima */
+  }
+
+  /* Ajusta los íconos de redes sociales en móviles */
+
+  .social-icons {
+    margin-top: 1rem;
+    flex-direction: column;
+    /* Los íconos en vertical */
+    gap: 0.5rem;
+  }
+}
+
+/* Para pantallas más grandes (desktop), el menú es visible por defecto */
+
+@media (min-width: 769px) {
+  #menu-toggle {
+    display: none;
+    /* Oculta el botón "hamburguesa" en pantallas grandes */
+  }
+
+  nav ul {
+    display: flex;
+    /* Menú visible por defecto en pantallas grandes */
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  #inicio h1 {
+    font-size: 2rem;
+    /* Tamaño más pequeño para móviles */
+  }
+
+  #inicio img {
+    width: 100%;
+    max-width: 200px;
+    /* Ajusta el tamaño máximo de la imagen en móviles */
+  }
+
+  #inicio h2 {
+    font-size: 1.8rem;
+  }
+
+  #inicio p {
+    font-size: 1rem;
+  }
 }
 
 .hover\:translate-y-2:hover {
@@ -1262,9 +1352,32 @@ header {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+@media (min-width: 640px) {
+  .sm\:max-w-sm {
+    max-width: 24rem;
+  }
+}
+
 @media (min-width: 768px) {
+  .md\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .md\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .md\:block {
     display: block;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-1\/3 {
@@ -1273,6 +1386,10 @@ header {
 
   .md\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .md\:max-w-md {
+    max-width: 28rem;
   }
 
   .md\:grid-cols-2 {
@@ -1285,6 +1402,12 @@ header {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:space-x-16 > :not([hidden]) ~ :not([hidden]) {
@@ -1310,9 +1433,38 @@ header {
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:max-w-lg {
+    max-width: 32rem;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1321,4 +1473,5 @@ header {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
-  
+
+

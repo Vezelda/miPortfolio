@@ -331,4 +331,22 @@ document.addEventListener('DOMContentLoaded', function() {
   sections.forEach(section => {
     observer.observe(section); // Observa cada sección
   });
+
+  // Agrega evento para los enlaces en móviles
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active-link'));
+      link.classList.add('active-link');
+    });
+  });
 });
+
+
+// Funcionalidad del menú hamburguesa
+document.getElementById("menu-toggle").addEventListener("click", function() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("hidden");
+});
+
+
+

@@ -20,18 +20,20 @@
         <span class="text-[#5f9ea0] group-hover:text-[#374151] transition-colors duration-300 dark:text-light-turquoise dark:group-hover:text-white">Aníbal</span>
         <span class="text-[#374151] group-hover:text-[#5f9ea0] transition-colors duration-300 dark:text-white dark:group-hover:text-light-turquoise">Cardozo</span>
       </h1>
-      
-
+  
+      <!-- Botón "hamburguesa" para móviles -->
+      <div id="menu-toggle" class="cursor-pointer text-3xl md:hidden">&#9776;</div> <!-- Ícono de hamburguesa -->
+  
       <!-- Menú de navegación -->
-      <nav class="flex space-x-4 md:space-x-6 items-center">
-        <ul class="flex space-x-2 md:space-x-4">
+      <nav id="menu" class="hidden md:flex space-x-4 md:space-x-6 items-center">
+        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
           <li><a href="#inicio" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Inicio</a></li>
           <li><a href="#skills" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Habilidades</a></li>
           <li><a href="#proyectos" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Proyectos</a></li>
           <li><a href="#sobre-mi" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Sobre mí</a></li>
           <li><a href="#contacto" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">Contacto</a></li>
         </ul>
-
+  
         <!-- Íconos de GitHub y LinkedIn -->
         <div class="flex space-x-2 md:space-x-4">
           <a href="https://github.com/Vezelda" target="_blank" class="hover:text-light-turquoise text-black dark:text-white dark:hover:text-light-turquoise">
@@ -42,7 +44,7 @@
           </a>
         </div>
       </nav>
-
+  
       <!-- Botones para cambiar idioma y tema -->
       <div class="flex space-x-2 md:space-x-4 items-center">
         <!-- Botón deslizante para cambiar idioma -->
@@ -53,7 +55,7 @@
           </div>
           <span class="ml-3 text-sm text-gray-900 dark:text-white" id="idiomaLabel">ES</span>
         </label>
-      
+  
         <!-- Botón deslizante para cambiar tema (Sol y Luna) -->
         <label class="inline-flex items-center cursor-pointer">
           <input type="checkbox" id="temaSwitch" class="sr-only" onclick="cambiarTema()">
@@ -62,48 +64,47 @@
           </div>
           <i id="iconTema" class="fas fa-sun ml-3 text-yellow-500"></i>
         </label>
-
+      </div>
     </div>
   </header>
 
-
-  
+    
   <section id="inicio" class="h-screen bg-fixed bg-cover bg-center flex flex-col items-center justify-center space-y-4 text-center" style="background-image: url('images/back.gif');">
     <!-- Contenedor que contiene "I AM", la imagen y "Vezel" -->
-    <div class="flex flex-col md:flex-row items-center justify-center space-x-10">
+    <div class="flex flex-col md:flex-row items-center justify-center space-x-0 md:space-x-10">
         <!-- Texto 'I AM' a la izquierda (oculto en pantallas pequeñas) -->
-        <h1 class="text-9xl font-bold tracking-wider text-white font-handwritten hidden md:block">
+        <h1 class="text-6xl md:text-9xl font-bold tracking-wider text-white font-handwritten hidden md:block">
           I AM
         </h1>
 
         <!-- Imagen centrada (siempre visible) -->
-        <div class="mx-8">
-          <img src="images/yo.png" alt="Aníbal Cardozo" class="rounded-lg shadow-lg max-w-xs">
+        <div class="mx-4 md:mx-8">
+          <img src="images/yo.png" alt="Aníbal Cardozo" class="rounded-lg shadow-lg max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
         </div>
 
         <!-- Texto 'Vezel' a la derecha (oculto en pantallas pequeñas) -->
-        <h1 class="text-9xl font-bold tracking-wider hidden md:block">
+        <h1 class="text-6xl md:text-9xl font-bold tracking-wider hidden md:block">
           <span class="text-light-turquoise font-handwritten">V</span><span class="text-white font-handwritten">ezel</span>
         </h1>
     </div>
 
     <!-- Descripción debajo de "I AM", la imagen y "Vezel" -->
-    <div class="text-center mt-16 space-y-6 transform -translate-x-12">
-      <h2 id="webDevText" class="text-6xl font-handwritten italic text-white font-bold">
+    <div class="text-center mt-8 md:mt-16 space-y-6">
+      <h2 id="webDevText" class="text-4xl md:text-6xl font-handwritten italic text-white font-bold">
         - Desarrollador Web -
       </h2>
-      <p id="descriptionText" class="text-3xl max-w-3xl mx-auto font-bold text-gray-300" style="text-shadow: 2px 2px 4px rgb(0, 0, 0);">
+      <p id="descriptionText" class="text-xl md:text-3xl max-w-3xl mx-auto font-bold text-gray-300" style="text-shadow: 2px 2px 4px rgb(0, 0, 0);">
         Creo aplicaciones web de alta calidad usando HTML, CSS, JavaScript, Node.js, React.js, y más.
       </p>
-      
 
       <!-- Botón de proyectos centrado debajo de la descripción -->
-      <a id="exploreButton" href="#proyectos" class="mt-8 bg-light-turquoise text-gray-900 font-bold py-4 px-10 rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300 shadow-lg inline-block">
+      <a id="exploreButton" href="#proyectos" class="mt-8 bg-light-turquoise text-gray-900 font-bold py-3 px-8 md:py-4 md:px-10 rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300 shadow-lg inline-block">
         Explora mis proyectos!
       </a>
     </div>
 
   </section>
+
 
 
 <!-- Sección de Skills -->
