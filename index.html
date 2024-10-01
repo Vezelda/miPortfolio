@@ -286,35 +286,32 @@
 <section id="contacto" class="py-16 bg-gray-200 text-gray-900 dark:bg-dark-gray dark:text-gray-100">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-8 text-black dark:text-light-turquoise">Contacto</h2>
+    
     <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-lg mx-auto">
       <!-- Campo oculto para Netlify Honeypot -->
       <input type="hidden" name="form-name" value="contacto" />
       <p class="hidden">
         <label>No llenar: <input name="bot-field" /></label>
       </p>
-    
+
       <!-- Nombre -->
       <div class="relative mb-4">
-        <i class="fas fa-user absolute left-3 top-3 text-gray-400"></i>
-        <input type="text" name="nombre" id="nombreInput" placeholder="Nombre" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise">
+        <label>Nombre <input type="text" name="nombre" placeholder="Nombre" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></label>
       </div>
-    
+
       <!-- Correo -->
       <div class="relative mb-4">
-        <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
-        <input type="email" name="correo" id="correoInput" placeholder="Correo" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise">
+        <label>Correo <input type="email" name="correo" placeholder="Correo" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></label>
       </div>
-    
+
       <!-- Mensaje -->
       <div class="relative mb-4">
-        <i class="fas fa-comment-dots absolute left-3 top-3 text-gray-400"></i>
-        <textarea name="mensaje" id="mensajeTextarea" placeholder="Mensaje" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></textarea>
+        <label>Mensaje <textarea name="mensaje" placeholder="Mensaje" required class="w-full p-3 pl-12 border border-gray-300 rounded bg-white text-black dark:bg-gray-300 dark:border-gray-500 dark:text-black focus:outline-none focus:ring-2 focus:ring-light-turquoise"></textarea></label>
       </div>
-    
+
       <!-- Botón de envío -->
       <button type="submit" class="bg-light-turquoise text-gray-900 font-bold px-4 py-2 rounded hover:bg-gray-900 hover:text-white transition-colors duration-300 dark:bg-light-turquoise dark:text-gray-900 dark:hover:bg-gray-100">Enviar</button>
     </form>
-    
 
     <!-- Mensaje emergente de confirmación -->
     <div id="confirmacionMensaje" class="mt-8 hidden text-green-500">
@@ -335,6 +332,7 @@
     </div>
   </div>
 </section>
+
 
 
 

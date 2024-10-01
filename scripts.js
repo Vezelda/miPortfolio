@@ -278,14 +278,20 @@ function verificarTemaInicial() {
 }
 
 function mostrarConfirmacion(event) {
-  // Mostramos el mensaje de confirmación
-  const confirmacionMensaje = document.getElementById('confirmacionMensaje');
-  confirmacionMensaje.classList.remove('hidden');
+  event.preventDefault(); // Evita la recarga automática de la página
+  const form = event.target;
 
-  // Luego de un corto retraso, enviamos el formulario a Netlify
-  setTimeout(() => {
-    event.target.submit(); // Envía el formulario
-  }, 2000); // Ajusta el retraso según lo que quieras
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(form)).toString(),
+  })
+    .then(() => {
+      // Muestra el mensaje de confirmación
+      document.getElementById("confirmacionMensaje").classList.remove("hidden");
+      form.reset(); // Opcional: Restablecer el formulario
+    })
+    .catch((error) => alert(error));
 }
 
 // Llama a la función cuando la página se carga
