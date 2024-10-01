@@ -27,3 +27,53 @@ input:checked + .w-11 .dot {
     color: #1de9b6; /* Asegúrate de que el color no cambie al pasar el ratón */
   }
   
+
+  /* Ajuste general del header para pantallas pequeñas */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ajusta el nombre y tamaño de la fuente en móviles */
+  .header-name {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+    margin-bottom: 0.5rem; /* Añade un poco de espacio */
+  }
+
+  /* Asegura que el menú de navegación sea vertical y no se desborde */
+  nav ul {
+    flex-direction: column; /* Hace que los enlaces del menú se apilen verticalmente */
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem; /* Ajusta el tamaño del texto de los enlaces */
+  }
+
+  /* Ajusta los íconos de GitHub y LinkedIn para que no se amontonen */
+  .social-icons {
+    margin-top: 1rem;
+    flex-direction: column; /* Los íconos en vertical */
+    gap: 0.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem; /* Ajusta el tamaño de la fuente del nombre */
+  }
+
+  p {
+    font-size: 1rem; /* Ajusta el tamaño de la fuente de la descripción */
+    margin: 0.5rem 0;
+  }
+}
+
+
+img {
+  max-width: 100%; /* Asegúrate de que las imágenes no se desborden */
+  height: auto;
+}
