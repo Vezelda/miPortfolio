@@ -213,7 +213,7 @@
           <p id="proyecto1Desc" class="text-black dark:text-gray-100 proyecto-descripcion">Desarrollo de mi Portfolio Web, aplicando mis conocimientos en HTML, CSS, Tailwindcss, JavaScript, Diseño Grafico, Diseño UX/UI.</p>
           <div class="mt-4 space-x-4">
             <a id="proyecto1Btn" href="#" target="_blank" class="inline-block bg-light-turquoise text-gray-900 font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white transition-colors duration-300">Ver Proyecto</a>
-            <a id="proyecto1Repo" href="https://github.com/tu-github-repo1" target="_blank" class="inline-block bg-gray-700 text-white font-bold py-2 px-4 rounded hover:bg-light-turquoise hover:text-gray-900 transition-colors duration-300">Ver Repositorio</a>
+            <a id="proyecto1Repo" href="https://github.com/Vezelda/miPortfolio" target="_blank" class="inline-block bg-gray-700 text-white font-bold py-2 px-4 rounded hover:bg-light-turquoise hover:text-gray-900 transition-colors duration-300">Ver Repositorio</a>
           </div>
         </div>
         
@@ -286,7 +286,7 @@
 <section id="contacto" class="py-16 bg-gray-200 text-gray-900 dark:bg-dark-gray dark:text-gray-100">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-8 text-black dark:text-light-turquoise">Contacto</h2>
-    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-lg mx-auto">
+    <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="max-w-lg mx-auto" onsubmit="mostrarConfirmacion(event)">
       <!-- Campo oculto para Netlify Honeypot -->
       <input type="hidden" name="form-name" value="contacto" />
       <p class="hidden">
@@ -314,6 +314,11 @@
       <!-- Botón de envío -->
       <button type="submit" class="bg-light-turquoise text-gray-900 font-bold px-4 py-2 rounded hover:bg-gray-900 hover:text-white transition-colors duration-300 dark:bg-light-turquoise dark:text-gray-900 dark:hover:bg-gray-100">Enviar</button>
     </form>
+
+    <!-- Mensaje emergente de confirmación -->
+    <div id="confirmacionMensaje" class="mt-8 hidden text-green-500">
+      ¡Solicitud enviada correctamente!
+    </div>
 
     <!-- Opciones de contacto alternativo -->
     <div class="mt-8 flex justify-center space-x-6">
